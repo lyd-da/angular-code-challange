@@ -1,0 +1,125 @@
+// .actorCard {
+//   background-color: black;
+// }
+// .poster {
+//   width: 100%;
+//   padding: 0;
+//   overflow: hidden;
+
+//   &__image {
+//     width: 60%;
+//     height: auto;
+//     object-fit: cover;
+//     border-radius: 4px 4px 0 0;
+//     user-select: none;
+//     transition: 0.4s;
+//     min-height: 100px;
+
+//     &:hover {
+//       transform: scale(1);
+//     }
+//   }
+
+//   &__content {
+//     padding: 10px 0;
+
+//     p {
+//       font-size: 14px;
+//       color: #070707;
+//     }
+//   }
+
+//   &__title {
+//     display: inherit;
+//     font-weight: 700;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     color: white;
+//   }
+// }
+
+// // xs
+// @media screen and (max-width: 599px) {
+// }
+
+// // sm
+// @media screen and (min-width: 600px) and (max-width: 959px) {
+//   .poster > img {
+//     height: auto;
+//   }
+// }
+
+// // md
+// @media screen and (min-width: 960px) and (max-width: 1279px) {
+// }
+
+// // lg
+// @media screen and (min-width: 1280px) and (max-width: 1919px) {
+// }
+
+// // xl
+// @media screen and (min-width: 1920px) and (max-width: 5000px) {
+// }
+:host {
+  display: flex;
+  flex-direction: column;
+  //   padding: 2rem;
+  justify-content: center;
+}
+.actor-list-container {
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  
+  &__title {
+        display: inherit;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: white;
+      }
+}
+mat-card {
+  width: 210px; /* Adjust width as needed */
+  height: 170px;
+  margin: 15px; /* Adjust margin as needed */
+  display: inline-block;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+mat-card-header {
+  display: flex; /* Make header content align horizontally */
+  justify-content: space-between; /* Distribute header content evenly */
+}
+mat-card-actions {
+  display: block; /* Make actions section a flexbox for alignment */
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+mat-card-actions a {
+  /* Customize button styles here */
+  background-color: #f44336; /* Example blue color */
+  color: #fff;
+  padding: 5px 10px; /* Adjust padding as needed */
+  border-radius: 4px; /* Add some rounded corners */
+  text-decoration: none;
+  margin-top: 20px;
+}
+mat-paginator {
+  background-color: transparent;
+  color: #c7c7c7;
+  justify-self: center;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.spinner {
+  margin: 150px;
+  align-self: center;
+}

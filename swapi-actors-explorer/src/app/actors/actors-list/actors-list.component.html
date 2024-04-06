@@ -1,0 +1,24 @@
+<app-nav></app-nav>
+<div class="spinner" *ngIf="isLoading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+<div>
+  <div class="actor-list-container">
+    <mat-card *ngFor="let actor of actorsList">
+      <mat-card-header>
+        <mat-card-title class="actor-list-container__title colored-hover">{{
+          actor.name
+        }}</mat-card-title>
+        <mat-card-subtitle>Height: {{ actor.height }}</mat-card-subtitle>
+        <mat-card-subtitle>Birth Year: {{ actor.birth_year }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content> </mat-card-content>
+      <mat-card-actions>
+        <a href=""  [routerLink]="['/detail/', actor.url.split('/')[5]]" >View Details</a>
+      </mat-card-actions>
+    </mat-card>
+  
+  </div>
+  <mat-paginator *ngIf="!isLoading" [length]="totalActors" [pageSize]="pageSize" (page)="handlePageChange($event)">
+  </mat-paginator>
+</div>

@@ -1,0 +1,80 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  //   padding: 2rem;
+  //   justify-content: center;
+}
+.content {
+  padding: 4rem;
+  align-self: center;
+}
+.name {
+  display: inherit;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(221, 216, 216);
+}
+.actor-details {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 80%; /* Adjust width as needed */
+
+  mat-list-item {
+    width: 50%;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+
+    &:last-child {
+      border-bottom: none; /* Remove border for the last item */
+    }
+
+    .label {
+      font-weight: bold;
+      margin-right: 1rem;
+      color: #fff; /* Adjust label color */
+    }
+  }
+}
+
+.film-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+mat-card {
+  max-width: 900px; /* Adjust max-width as needed */
+  background-color: #424242; /* White background */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+}
+a {
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.backIcon {
+  margin-right: 20px;
+}
+mat-list-item a {
+  /* Customize button styles here */
+  background-color: #f44336;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.spinner {
+  margin: 150px;
+  color: #f44336;
+  align-self: center;
+}
