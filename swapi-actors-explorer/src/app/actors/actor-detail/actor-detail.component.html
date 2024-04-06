@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+<div class="spinner" *ngIf="isLoading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+<div class="content" *ngIf="actor">
+  <h2 class="name">
+    <span class="backIcon"
+      ><a mat-icon-button routerLink="/list">
+        <mat-icon>arrow_back</mat-icon>
+      </a></span
+    >
+    {{ actor.name }} Details
+  </h2>
+  <mat-card>
+    <mat-card-content>
+      <mat-list class="actor-details">
+        <mat-list-item
+          *ngFor="
+            let attribute of [
+              'height',
+              'mass',
+              'hair_color',
+              'skin_color',
+              'eye_color',
+              'birth_year',
+              'gender'
+            ]
+          "
+        >
+          <span class="label">{{ attribute | titlecase }}</span>
+          <span>{{ actor[attribute] }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="label">Homeworld:</span>
+          <a href="#">View Home world</a>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="label">Films:</span>
+          <a href="#" *ngIf="actor.films.length != 0">
+            view {{ actor.films.length }} movies</a
+          >
+        </mat-list-item>
+        <mat-list-item>
+          <span class="label">Species:</span>
+          <a href="#" *ngIf="actor.species.length != 0">
+            view {{ actor.species.length }} species</a
+          >
+        </mat-list-item>
+        <mat-list-item>
+          <span class="label">vehicles:</span>
+          <a href="#" *ngIf="actor.vehicles.length != 0">
+            view {{ actor.vehicles.length }} vehicles</a
+          >
+        </mat-list-item>
+        <mat-list-item>
+          <span class="label">Starships:</span>
+          <a href="#" *ngIf="actor.starships.length != 0">
+            view {{ actor.starships.length }} starships</a
+          >
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
