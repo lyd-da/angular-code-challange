@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
 
 import { ErrorComponent } from './error.component';
 
@@ -8,7 +9,8 @@ describe('ErrorComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ErrorComponent]
+      declarations: [ErrorComponent],
+      imports:[MatCardModule,]
     });
     fixture = TestBed.createComponent(ErrorComponent);
     component = fixture.componentInstance;

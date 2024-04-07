@@ -29,8 +29,12 @@ export class ActorsListComponent {
         this.isLoading = false;
       },
       error: (error) => {
-        setTimeout(() => this._errorService.handleError(), 2000);
-        console.log(error);
+        // setTimeout(() => this._errorService.handleError(), 2000);
+        this.actorsList = [];
+        this.pageSize = 0;
+        this.totalActors = 0;
+        this.isLoading = false;
+        this._errorService.handleError();
       },
     });
   }

@@ -4,14 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-error',
   templateUrl: './error.component.html',
-  styleUrls: ['./error.component.scss']
+  styleUrls: ['./error.component.scss'],
 })
 export class ErrorComponent {
   errorMessage: string | null = null;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor() {}
 
-  ngOnInit() {
-    this.errorMessage = this.route.snapshot.queryParams['message'];
-  }
+  ngOnInit() {}
 }

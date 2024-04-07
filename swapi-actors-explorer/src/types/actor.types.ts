@@ -19,7 +19,7 @@ export interface Actor {
   }
   export interface ActorApiReponse {
     count: number;
-    next: string;
-    previous: string;
+    next: string |null;
+    previous: string | null;
     results: Actor[];
   }

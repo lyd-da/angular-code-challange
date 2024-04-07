@@ -18,7 +18,7 @@ export class ActorsService {
     let params = new HttpParams().set('page', page);
     return this._http.get<ActorApiReponse>(this._actorsUrl, {params: params});
   }
-  getActorDetail(id: string){
+  getActorDetail(id: string) {
     return this._http.get<Actor>(`${this._actorsUrl}/${id}`);
   }
 }

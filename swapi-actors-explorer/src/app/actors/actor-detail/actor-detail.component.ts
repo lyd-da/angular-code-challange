@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActorsService } from 'src/app/actors/services/actors.service';
 import { ErrorService } from 'src/app/shared/services/error.service';
@@ -9,7 +9,7 @@ import { Actor } from 'src/types/actor.types';
   templateUrl: './actor-detail.component.html',
   styleUrls: ['./actor-detail.component.scss'],
 })
-export class ActorDetailComponent {
+export class ActorDetailComponent implements OnInit{
   actorId: any = '';
   actor?: Actor;
   isLoading = true;
@@ -19,7 +19,7 @@ export class ActorDetailComponent {
     private _actorsService: ActorsService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void  {
     this.actorId = this._activatedRoute.snapshot.paramMap.get('id');
     console.log(this.actorId);
 
@@ -29,6 +29,7 @@ export class ActorDetailComponent {
         this.isLoading = false;
       },
       error: (error) => {
+        this.isLoading = false;
         this._errorService.handleError();
       },
     });

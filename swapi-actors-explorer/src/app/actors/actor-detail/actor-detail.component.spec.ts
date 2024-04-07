@@ -1,10 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { ActorDetailComponent } from './actor-detail.component';
 import { ActorsService } from 'src/app/actors/services/actors.service';
 import { ErrorService } from 'src/app/shared/services/error.service';
 import { Actor } from 'src/types/actor.types';
+import { NavComponent } from 'src/app/shared/nav/nav.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 describe('ActorDetailComponent', () => {
   let component: ActorDetailComponent;
@@ -37,6 +42,7 @@ describe('ActorDetailComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ActorDetailComponent],
+      imports:[NavComponent, MatIconModule, AppRoutingModule, MatCardModule,MatListModule ],
       providers: [
         { provide: ActivatedRoute, useValue: { snapshot: { paramMap: convertToParamMap({ id: actorId }) } } },
         { provide: ActorsService, useValue: actorsService },
@@ -46,9 +52,11 @@ describe('ActorDetailComponent', () => {
 
     actorsServiceSpy = TestBed.inject(ActorsService) as jasmine.SpyObj<ActorsService>;
     errorServiceSpy = TestBed.inject(ErrorService) as jasmine.SpyObj<ErrorService>;
+    
   });
 
   beforeEach(() => {
+  
     fixture = TestBed.createComponent(ActorDetailComponent);
     component = fixture.componentInstance;
   });
@@ -74,5 +82,8 @@ describe('ActorDetailComponent', () => {
 
     expect(component.isLoading).toBeFalse();
     expect(errorServiceSpy.handleError).toHaveBeenCalled();
+
   });
+
 });
+
