@@ -1,8 +1,4 @@
-Contains Angular code challenge for internship applicants to Mereb Technologies. Please carefully follow the instructions given below.
-
-**Create Simple Angular application**
-
-Your task is to create angular application and fetch a list of actors with the films they have been involved from a given API endpoint and render the list of actors on the page. Each actor should be displayed as a card with its name, height,birth_year and an "Detail" button.
+Angular application that fetch a list of actors with the films they have been involved from a given API endpoint and render the list of actors on the page. Each actor should be displayed as a card with its name, height,birth_year and an "Detail" button.
 
 **Details:**
 
